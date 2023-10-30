@@ -49,6 +49,24 @@
   <body>
     {% block content %}
 
+    <div class="mt-5">
+      <div class="mx-auto col-6">
+        <form>
+          <div class="mb-3">
+            <label for="exstudentroll" class="form-label">Search</label>
+            <input
+              name="searchroll"
+              type="text"
+              class="form-control"
+              id="exstudentroll"
+              placeholder="Enter ROLL number"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+      </div>
+    </div>
+
     <div class="col-10 mx-auto container mt-5">
       <button>
         <a href="/add_student" class="btn btn-primary">Add Student</a>

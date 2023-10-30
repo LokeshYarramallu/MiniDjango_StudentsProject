@@ -5,6 +5,10 @@ from .models import *
 # Create your views here.
 def home(request):
     queryset = Student.objects.all()
+    if request.GET.get("searchroll"):
+        queryset = Student.objects.filter(
+            rollno__icontains=request.GET.get("searchroll")
+        )
     context = {
         "students": queryset,
     }
@@ -16,6 +20,7 @@ def add_student(request):
         data = request.POST
         name = data.get("name")
         rollno = data.get("rollno")
+        rollno = rollno.upper()
         email = data.get("email")
         mobile = data.get("mobile")
         gender = data.get("gender")
