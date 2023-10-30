@@ -1,0 +1,94 @@
+{% extends "index.html" %} {% block content %}
+
+<form
+  class="col-6 mx-auto card p-3 shadow"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+
+  <h2>Add Student</h2>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      placeholder="Enter Name"
+      required
+    />
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="rollno">Roll Number</label>
+    <input
+      type="text"
+      class="form-control"
+      id="rollno"
+      name="rollno"
+      placeholder="Enter Roll Number"
+      required
+    />
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="gender">Gender</label>
+    <select class="form-control" id="gender" name="gender">
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="O">Other</option>
+    </select>
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="batch">Batch</label>
+    <input
+      type="text"
+      class="form-control"
+      id="batch"
+      name="batch"
+      placeholder="Enter Batch"
+    />
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter Email"
+      required
+    />
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="mobile">Mobile Number</label>
+    <input
+      type="text"
+      class="form-control"
+      id="mobile"
+      name="mobile"
+      placeholder="Enter Mobile Number"
+      required
+    />
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="profile_image">Profile Image</label>
+    <input
+      type="file"
+      class="form-control-file"
+      id="profile_image"
+      name="profile_image"
+      required
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+{% endblock %}
